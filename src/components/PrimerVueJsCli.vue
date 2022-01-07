@@ -2,27 +2,27 @@
     <div>
         <img alt="Vue logo" src="@/assets/logo.png">
       <h1 class="text-center">Tabla de Usuarios</h1>
-      <table class="table table-striped">
+      <table class="table table-sm">
           <thead>
               <tr>
                   <th>#</th>
                   <th>Nombre</th>
                   <th>Apellido</th>
                   <th>RUN</th>
-                  <th>Fecha de Nacimiento</th>
+                  <th>Fecha Nacimiento</th>
                   <th>Edad</th>
               </tr>
           </thead>
-          <tbody>
+          <tbody v-for="(item,clave) in usuario" :key="clave">
               <tr>
-                  <td>{{usuario[0].id}}</td>
-                  <td>{{usuario[0].nombre}}</td>
-                  <td>{{usuario[0].apellido}}</td>
-                  <td>{{usuario[0].run}}</td>
-                  <td>{{usuario[0].nacimiento}}</td>
-                  <td>{{usuario[0].edad}}</td>
+                  <td>{{item.id}}</td>
+                  <td>{{item.nombre}}</td>
+                  <td>{{item.apellido}}</td>
+                  <td>{{item.run}}</td>
+                  <td>{{item.nacimiento}}</td>
+                  <td>{{item.edad}}</td>
               </tr>
-              <tr>
+              <!-- <tr>
                   <td>{{usuario[1].id}}</td>
                   <td>{{usuario[1].nombre}}</td>
                   <td>{{usuario[1].apellido}}</td>
@@ -37,7 +37,7 @@
                   <td>{{usuario[2].run}}</td>
                   <td>{{usuario[2].nacimiento}}</td>
                   <td>{{usuario[2].edad}}</td>
-              </tr>
+              </tr> -->
           </tbody>
       </table>
   </div>
@@ -55,8 +55,15 @@
                 {id:3, nombre:'Larry', apellido:'Bird', run:'21.564.876-0', nacimiento:'12-08-97', edad:"47"}
             ]
             }
-        }
-    
-    
+        }    
 }
 </script>
+
+<style scoped>
+th {
+    font-size: small;
+}
+td {
+    font-size: small;
+}
+</style>
